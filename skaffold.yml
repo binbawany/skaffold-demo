@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+build:
+  artifacts:
+    - image: gcr.io/myapp/skaffold-demo
+      jib:
+        project: com.myapp.skaffold-demo
+        type: gradle
+
+deploy:
+  kubectl:
+    manifests:
+      - k8s-*
